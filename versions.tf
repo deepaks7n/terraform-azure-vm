@@ -1,10 +1,21 @@
 terraform {
-  required_version = ">= 0.13"
-
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0"
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=3.26.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "=3.4.3"
+    }
+    tls = {
+      source = "hashicorp/tls"
+      version = "4.0.3"
     }
   }
+}
+
+# Configure the Microsoft Azure Provider
+provider "azurerm" {
+  features {}
 }
